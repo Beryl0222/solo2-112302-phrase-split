@@ -10,3 +10,9 @@ coverage/
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# 运行期工作区与外部数据收件目录（不入库）
+corpus_store/
+workspace_store/
+inbox/
+*.tmp

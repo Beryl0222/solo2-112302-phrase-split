@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corpuskit"
+version = "0.1.0"
+description = "校企共建中文数据实训：术语候选、工单证据与交付包分组管理"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["corpuskit"]

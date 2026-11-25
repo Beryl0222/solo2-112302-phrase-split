@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""命令行入口包装：在 python -I 下也能定位到项目内的 corpuskit 包。
+
+用法（在项目根目录或任意目录均可，路径自动解析）：
+
+    python3 -I bin/corpuskit --store ./workspace init --seed data/corpus.json
+
+普通（非 -I）环境下直接 ``python3 -m corpuskit.cli ...`` 同样可用。
+"""
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from corpuskit.cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    raise SystemExit(main())
